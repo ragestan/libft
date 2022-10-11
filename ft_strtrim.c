@@ -47,7 +47,6 @@ int	ft_strlenlol(char const *s, char const *set)
 	}
 	return (len - i);
 }
-
 char	*ft_strtrim(char const *s, char const *set)
 {
 	char	*dest;

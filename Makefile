@@ -40,7 +40,7 @@ WWW	= -Wall -Wextra -Werror
 
 all: $(NAME)
 	gcc $(WWW) $(HEADER) $(FILIO)
-	ar -r $(NAME) $(FILIO)
+	ar -rc $(NAME) $(FILIO)
 
 $(NAME):	$(FILIO)
 

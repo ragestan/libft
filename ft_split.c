@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_strlen(char *str, char charset)
+int	ft_strlenlil(char *str, char charset)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ char	*ft_word(char *str, char charset)
 	int		i;
 	char	*word;
 
-	j = ft_strlen(str, charset);
+	j = ft_strlenlil(str, charset);
 	i = 0;
 	word = (char *)malloc((j + 1) * sizeof(char));
 	if (!word)
