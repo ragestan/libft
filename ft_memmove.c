@@ -6,34 +6,17 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:13:23 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/06 11:16:37 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:47:24 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
-void *ft_memcpy(void *dest, const void *src, size_t n)
-{
-	char *dest1;
-	char *src1;
-	size_t i;
+#include "libft.h"
 
-	i = 0;
-	src1 = (char *)src ;
-	dest1 = (char *)dest ;
-
-	if (n == 0 || src1 == dest1)
-		return (dest);
-	while(i < n)
-	{
-		dest1[i] = src1[i];
-		i++;
-	}
-	return ((void *)dest);
-}
-void *ft_memmove(void *dest, const void *str, size_t n)
+void	*ft_memmove(void *dest, const void *str, size_t n)
 {
-	char *dest1;
-	char *str1;
-	size_t i;
+	char	*dest1;
+	char	*str1;
+	size_t	i;
+
 	i = 0;
 	dest1 = dest;
 	str1 = (char *)str;
@@ -50,7 +33,7 @@ void *ft_memmove(void *dest, const void *str, size_t n)
 	}
 	else
 	{
-		ft_memcpy(dest, str,n);
+		ft_memcpy(dest, str, n);
 	}
 	return (dest);
 }

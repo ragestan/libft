@@ -6,19 +6,20 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:41:47 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/07 15:45:41 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 18:00:22 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	int	i;
+
 	i = 0;
-	while( str[i])
+	while (str[i])
 	{
-		if(str[i] == c)
-			return((char *)str + i);
+		if (str[i] == c)
+			return ((char *)str + i);
 		i++;
 	}
-	return 0;
+	return (0);
 }

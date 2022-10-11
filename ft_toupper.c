@@ -6,14 +6,12 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:15:14 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/07 15:15:21 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 19:06:46 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-int ft_toupper(int i)
+int	ft_toupper(int i)
 {
-    if(i >= 97 && i <= 122 )
-        i -= 32;
-    return i ;
+	if (i >= 97 && i <= 122)
+		i -= 32;
+	return (i);
 }

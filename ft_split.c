@@ -6,10 +6,11 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:13:56 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/08 16:14:40 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:59:30 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include "libft.h"
+
 int	ft_strlen(char *str, char charset)
 {
 	int	i;
@@ -19,6 +20,7 @@ int	ft_strlen(char *str, char charset)
 		i++;
 	return (i);
 }
+
 char	*ft_word(char *str, char charset)
 {
 	int		j;
@@ -30,7 +32,7 @@ char	*ft_word(char *str, char charset)
 	word = (char *)malloc((j + 1) * sizeof(char));
 	if (!word)
 		return (0);
-	while (i < j)
+	while (i < j && str[i] != charset)
 	{
 		word[i] = str[i];
 		i++;
@@ -38,6 +40,7 @@ char	*ft_word(char *str, char charset)
 	word[i] = '\0';
 	return (word);
 }
+
 int	ft_count(char *str, char c)
 {
 	int	i;
@@ -57,28 +60,27 @@ int	ft_count(char *str, char c)
 	return (count);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    int		i;
+	int		i;
 	char	**string;
 
-    i = 0;
-        if(!string)
-        return (0);
-    while (*s != '\0')
-    {
-        while (*s != '\0' && *s == c)
+	i = 0;
+	string = (char **)malloc(sizeof(char *) * (ft_count((char *)s, c) + 1));
+	if (!string)
+		return (0);
+	while (*s != '\0')
+	{
+		while (*s != '\0' && *s == c)
 			s++;
 		if (*s != '\0')
-        {
-            string[i] = ft_word((char *)s,c);
-            i++;
-        }
-        while (*s != '\0' && *s != c)
+		{
+			string[i] = ft_word((char *)s, c);
+			i++;
+		}
+		while (*s != '\0' && *s != c)
 			s++;
-    }
-
-    string[i] = 0;
+	}
+	string[i] = 0;
 	return (string);
-}	
-
+}

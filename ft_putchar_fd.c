@@ -6,11 +6,12 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:24:10 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/09 16:56:32 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:50:16 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-void ft_putchar_fd(char c, int fd)
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
 {
-	write(fd,&c,1);
+	write (fd, &c, 1);
 }

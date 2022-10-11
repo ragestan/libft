@@ -6,7 +6,7 @@ int main()
 {
   
   char T1[20]="bkkkkkkkkkkkb";
-    char T[20]="12345";
+    //char T[20]="12345";
     //int fd;
     //FILE *fd 
     //ft_putchar_fd('c',fd);

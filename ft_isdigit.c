@@ -6,13 +6,13 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:03:38 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/06 10:15:45 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:25:03 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-	if( c >= 48 && c <= 57)
+	if (c >= 48 && c <= 57)
 		return (1);
 	else
 		return (0);

@@ -6,11 +6,11 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:33:49 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/07 14:33:51 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 18:14:57 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <string.h>
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -25,7 +25,7 @@ int	ft_strlen(char *str)
 
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-    size_t	i;
+	size_t	i;
 	size_t	j;
 	size_t	dlen;
 	size_t	slen;

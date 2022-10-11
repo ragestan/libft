@@ -6,13 +6,13 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:27:04 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/06 10:13:02 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:25:52 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	if (c >= 32 && c<= 127 )
+	if (c >= 32 && c <= 127)
 		return (1);
-	return 0;
+	return (0);
 }

@@ -6,27 +6,13 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:47:35 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/06 10:57:45 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:17:06 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void *ft_memset(void *b,int c,size_t len)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *srt;
-	size_t i;
-	i = 0;
-	srt = b;
-
-	while (i < len)
-	{
-		srt[i] = c ;
-		i++;
-	}
-	return b;
-}
-void	ft_bzero(void *s,size_t n)
-{
-	ft_memset(s, 0,n);
+	ft_memset(s, 0, n);
 }

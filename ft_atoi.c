@@ -6,29 +6,29 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:56:10 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/08 11:00:28 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:19:46 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-    int c;
-    int i;
+	int	c;
+	int	i;
 
-    i = 1;
-    c = 0;
-    while ((*str >= 9 && *str <= 13) || *str == 32)
+	i = 1;
+	c = 0;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
-    if(*str == 43 || *str == 45)
-    {
-        if(*str == 45)
-            i = -i;
-        str++;
-    }
-    while (*str >= '0' && *str <= '9')
-    {
-        c = c * 10 + *str++ - '0';
-    }
-    c = c * i;
-    return (c);
+	if (*str == 43 || *str == 45)
+	{
+		if (*str == 45)
+			i = -i;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		c = c * 10 + *str++ - '0';
+	}
+	c = c * i;
+	return (c);
 }

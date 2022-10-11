@@ -6,14 +6,16 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:06:41 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/09 12:14:27 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 18:49:22 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-int ft_strlen( char *c)
+#include "libft.h"
+
+int	ft_strlen( char *c)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
+
 	i = 0;
 	j = 0;
 	while (c[i] != '\0')
@@ -23,7 +25,8 @@ int ft_strlen( char *c)
 	}
 	return (j);
 }
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
 	int		i;
@@ -32,15 +35,15 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	len = ft_strlen((char *)s);
 	i = 0;
 	str = malloc(len + 1);
-	if ( s == 0 || f == 0)
+	if (s == 0 || f == 0)
 		return (0);
 	if (!str)
 		return (0);
-	while(s[i])
+	while (s[i])
 	{
-		str[i] = f(i,s[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';
-	return str;
+	return (str);
 }
