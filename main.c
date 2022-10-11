@@ -1,29 +1,6 @@
 #include <string.h>
 #include <stdio.h>
-
-void *ft_memset(void *b,int c,size_t len);
-void *ft_memmove(void *dest, const void *str, size_t n);
-void *ft_memcpy(void *dest, const void *str, size_t n);
-void *ft_memcpy(void *dest, const void *src, size_t n);
-char *ft_strchr(const char *str, int c);
-char *ft_strrchr(const char *str, int c);
-void *ft_memchr(const void *str, int c, size_t n);
-int ft_memcmp(const void *str1, const void *str2, size_t n);
-char *ft_strnstr(const char *haystack, const char *needle, size_t len);
-int ft_atoi(const char *str);
-char	*ft_strdup(const char *src);
-void *ft_calloc(size_t count, size_t size);
-char *ft_substr(char const *s, unsigned int start, size_t len);
-char *ft_strjoin(char const *s1, char const *s2);
-void *ft_memset(void *b,int c,size_t len);
-char *ft_strtrim(char const *s, char const *set);
-char **ft_split(char const *s, char c);
-char *ft_itoa(int n);
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-size_t	ft_strlcat(char *dest, char *src, size_t size);
-void ft_putchar_fd(char c, int fd);
-
-
+#include "libft.h"
 
 int main()
 {
@@ -44,7 +21,7 @@ int main()
     //printf("%s",(char *)ft_memset(T1,'M',3));
     //memmove(T+4,T,10);
    //memcpy(T1,T,3);
- //ft_memcpy(T1+3,T1,4);
+ ft_memcpy(T1+3,T1,4);
 //puts(T1+3);
     //printf("%s",(char *)ft_memset(T1,'L',3));
    //printf("%s",(char *)ft_memmove(T1,T,10));

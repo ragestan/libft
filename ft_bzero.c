@@ -15,7 +15,7 @@
 void *ft_memset(void *b,int c,size_t len)
 {
 	unsigned char *srt;
-	int i;
+	size_t i;
 	i = 0;
 	srt = b;
 
@@ -26,7 +26,7 @@ void *ft_memset(void *b,int c,size_t len)
 	}
 	return b;
 }
-void	*ft_bzero(void *s,size_t n)
+void	ft_bzero(void *s,size_t n)
 {
 	ft_memset(s, 0,n);
 }

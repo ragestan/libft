@@ -6,7 +6,7 @@
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:52:17 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/09 18:01:04 by zbentalh         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:45:25 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -38,7 +38,7 @@ char	*ft_strdup(const char *src);
 void ft_striteri(char *s, void (*f)(unsigned int,char*));
 char *ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dest, char *src, size_t size);
-size_t strlcpy( char *dst,const char *src,size_t size);
+size_t ft_strlcpy( char *dst,const char *src,size_t size);
 int ft_strlen( char *c);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int	ft_strncmp(char *s1, char *s2, size_t n);
