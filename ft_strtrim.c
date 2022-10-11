@@ -10,53 +10,100 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
-int ft_strlen(char const *s1, char const *set)
+int ft_strlen( char *c)
 {
-    int i,j,len;
-    len=i=j=0;
-    while(s1[i] != '\0')
+	int i;
+	int j;
+	i = 0;
+	j = 0;
+	while (c[i] != '\0')
+	{
+		j++;
+		i++;
+	}
+	return (j);
+}
+
+int ft_strlenlol(char const *s, char const *set)
+{
+    int i;
+    int j;
+    int len;
+
+    len = ft_strlen((char *)s);
+    i = 0;
+    j = 0;
+    while(s[i])
+    {
+        while(s[i] != set[j] && set[j])
         {
-            j=0;
-            while(set[j])
-            {
-                if(s1[i]==set[j])
-                {
-                    len++;
-                    break;
-                }
-                j++;
-            }
-            i++;
+            j++;
         }
-        return i-len;
+        if(s[i] != set[j])
+        {   
+            j = 0;
+            break;
+        }
+        j = 0;
+        i++;
+    }
+    while(i <= len)
+    {
+        while(s[len] != set[j] && set[j])
+        {
+            j++;
+        }
+        if(s[len] != set[j])
+            break;
+        j = 0;
+        len--;
+    }
+    return (len - i);
 }
 char *ft_strtrim(char const *s, char const *set)
 {
-    char *dest;
+    char  *dest;
     int i;
     int j;
     int k;
     int len;
 
+    len = ft_strlen((char *)s);
     k = 0;
     i = 0;
     j = 0;
-    len = ft_strlen(s,set);
-    dest = malloc(len+1);
-    while(s[i] != '\0')
+    dest = malloc(ft_strlenlol(s,set) + 2);
+    while(s[i])
     {
-        while(s[i]!= set[j] && set[j] != '\0')
+        while(s[i] != set[j] && set[j])
         {
             j++;
         }
-            if(s[i] != set[j])
-            {
-                dest[k] = s[i];
-                k++;
-            }
-            i++;
+        if(s[i] != set[j])
+        {   
             j = 0;
-    }  
-    dest[k]=0;
-    return dest;
+            break;
+        }
+        j = 0;
+        i++;
+    }
+    while(i <= len)
+    {
+        while(s[len] != set[j] && set[j])
+        {
+            j++;
+        }
+        if(s[len] != set[j])
+            break;
+        j = 0;
+        len--;
+    }
+    while(i<=len)
+    {
+        dest[k] = s[i];
+        i++;
+        k++;
+    }
+    dest[k] = '\0';
+    return (dest);
 }

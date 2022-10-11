@@ -28,11 +28,11 @@ void ft_putchar_fd(char c, int fd);
 int main()
 {
   
-  char T1[20]="12";
+  char T1[20]="bkkkkkkkkkkkb";
     char T[20]="12345";
-    int fd;
-    FILE *fd 
-    ft_putchar_fd('c',fd);
+    //int fd;
+    //FILE *fd 
+    //ft_putchar_fd('c',fd);
     //int i = -2147483648;
    //char (*f)(unsigned int, char);
   // unsigned int  k = 5;
@@ -61,7 +61,7 @@ int main()
   //printf("%d",substr(T1,3,3));
   //printf("%s",ft_strjoin(T1,T));
   //puts(T1);
-  //printf("%s",ft_strtrim(T1,"l"));
+  printf("%s",ft_strtrim(T1,"zak"));
  //char **str=ft_split("T1",'o'); 
  //puts(T1);
  //printf("%s",ft_itoa(i));
