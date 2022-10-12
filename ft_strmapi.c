@@ -11,21 +11,6 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_strlen( char *c)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (c[i] != '\0')
-	{
-		j++;
-		i++;
-	}
-	return (j);
-}
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;

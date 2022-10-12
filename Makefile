@@ -1,4 +1,4 @@
-NAME = lifbt.a
+NAME = libft.a
 RM = rm -f
 SRC	= ft_isalpha.c\
 		ft_isdigit.c\
@@ -34,12 +34,10 @@ SRC	= ft_isalpha.c\
 
 FILIO = $(SRC:.c=.o)
 
-HEADER = libft.h
-
 WWW	= -Wall -Wextra -Werror
 
 all: $(NAME)
-	gcc $(WWW) $(HEADER) $(FILIO)
+	gcc $(WWW) libft.h $(FILIO)
 	ar -rc $(NAME) $(FILIO)
 
 $(NAME):	$(FILIO)

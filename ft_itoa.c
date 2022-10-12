@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_count(int n)
+int	ft_cunt(int n)
 {
 	int	i;
 
@@ -48,7 +48,7 @@ char	*ft_itoa(int n)
 	int		i;
 	int		div;
 
-	i = ft_count(n);
+	i = ft_cunt(n);
 	div = ft_tihaja(i - 1);
 	str = malloc (i + 1);
 	if (!str)
@@ -63,10 +63,9 @@ char	*ft_itoa(int n)
 	}
 	while (div > 0)
 	{
-		str[i] = n / div + 48;
+		str[i++] = n / div + 48;
 		n = n / div;
 		div = div / 10;
-		i++;
 	}
 	str[i] = '\0';
 	return (str);

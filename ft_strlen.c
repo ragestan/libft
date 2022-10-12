@@ -10,10 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen( char *c)
+#include "libft.h"
+size_t	ft_strlen(const char *c)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;

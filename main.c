@@ -5,7 +5,7 @@
 int main()
 {
   
-  char T1[20]="bkkkkkkkkkkkb";
+  char T1[20]="kkkkkkkkkkb";
     //char T[20]="12345";
     //int fd;
     //FILE *fd 
@@ -21,7 +21,7 @@ int main()
     //printf("%s",(char *)ft_memset(T1,'M',3));
     //memmove(T+4,T,10);
    //memcpy(T1,T,3);
- ft_memcpy(T1+3,T1,4);
+ //ft_memcpy(T1+3,T1,4);
 //puts(T1+3);
     //printf("%s",(char *)ft_memset(T1,'L',3));
    //printf("%s",(char *)ft_memmove(T1,T,10));
