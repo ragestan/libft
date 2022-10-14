@@ -11,6 +11,33 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+int	ft_devcunt(int n)
+{
+	int	i;
+
+	i = 0;
+	while (n > 0)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
+}
+
 int	ft_cunt(int n)
 {
 	int	i;
@@ -44,29 +71,29 @@ int	ft_tihaja(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
+	char	*s;
 	int		i;
 	int		div;
 
 	i = ft_cunt(n);
-	div = ft_tihaja(i - 1);
-	str = malloc (i + 1);
-	if (!str)
+	s = malloc (i + 1);
+	if (!s)
 		return (0);
-	i = 0;
 	if (n == -2147483648)
-		return ("-2147483648");
+		return (ft_strcpy(s, "-2147483648"));
+	i = ft_devcunt(n);
+	div = ft_tihaja(i - 1);
+	i = 0;
 	if (n < 0)
-	{
-		str[i++] = '-';
-		n = -n ;
-	}
+		s[i++] = '-';
+	if (n < 0)
+		n = -n;
 	while (div > 0)
 	{
-		str[i++] = n / div + 48;
-		n = n / div;
+		s[i] = n / div % 10 + 48;
 		div = div / 10;
+		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	s[i] = 0;
+	return (s);
 }

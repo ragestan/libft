@@ -9,8 +9,8 @@
 /*   Updated: 2022/10/11 18:00:22 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 #include "libft.h"
+
 char	*ft_strchr(const char *str, int c)
 {
 	int	i;
@@ -18,7 +18,7 @@ char	*ft_strchr(const char *str, int c)
 
 	l = ft_strlen(str);
 	i = 0;
-	if(c==0)
+	if (c == 0)
 	{
 		return ((char *)str + l);
 	}

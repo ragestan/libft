@@ -20,7 +20,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 	i = 0;
 	s1 = (char *)str1;
 	s2 = (char *)str2;
-	while ( i < n)
+	while (i < n)
 	{
 		if ((unsigned char)s1[i] < (unsigned char)s2[i])
 		{
