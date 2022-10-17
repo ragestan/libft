@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_mystrlen(char *a, char *b)
+static int	ft_mystrlen(char *a, char *b)
 {
 	int	i;
 	int	j;

@@ -1,46 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbentalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 14:56:41 by zbentalh          #+#    #+#             */
-/*   Updated: 2022/10/11 19:03:41 by zbentalh         ###   ########.fr       */
+/*   Created: 2022/10/16 16:47:36 by zbentalh          #+#    #+#             */
+/*   Updated: 2022/10/17 11:49:50 by zbentalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	ft_check(char s, char const *set)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
-	int	j;
+	t_list	*n;
+	t_list	*full;
 
-	j = 0;
-	while (set[j])
+	if(!f || !del)
+	   return (NULL);
+	full = NULL;
+	while(lst)
 	{
-		if (s == set[j])
-			return (1);
-		j++;
+		if(!(n = ft_lstnew((*f)(lst -> content))))
+			{
+				while(full)
+				{
+					n = full -> next;
+					(*del)(full ->content);
+					free(full);
+					full = n;
+				}
+				lst = NULL;
+				return (NULL);
+			}
+			ft_lstadd_back(&full, n);
+			lst = lst -> next;
 	}
-	return (0);
+	return (full);
 }
 
-char	*ft_strtrim(char const *s, char const *set)
-{
-	char	*dest;
-	int		i;
-	int		len;
+						
 
-	len = ft_strlen((char *)s);
-	i = 0;
-	while (ft_check(s[i], set))
-	{
-		i++;
-	}
-	while (ft_check(s[len - 1], set) && i < len)
-	{
-		len--;
-	}
-	dest = ft_substr(s, i, len - i);
-	return (dest);
-}
+	

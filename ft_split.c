@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_strlenlil(char *str, char charset)
+static int	ft_strlenlil(char *str, char charset)
 {
 	int	i;
 
@@ -21,7 +21,7 @@ int	ft_strlenlil(char *str, char charset)
 	return (i);
 }
 
-char	*ft_word(char *str, char charset)
+static char	*ft_word(char *str, char charset)
 {
 	int		j;
 	int		i;
@@ -41,7 +41,7 @@ char	*ft_word(char *str, char charset)
 	return (word);
 }
 
-int	ft_count(char *str, char c)
+static int	ft_count(char *str, char c)
 {
 	int	i;
 	int	count;

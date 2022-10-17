@@ -36,20 +36,34 @@ SRC	= ft_isalpha.c\
 		ft_putstr_fd.c\
 		main.c\
 
+SRC_B = ft_lstadd_back_bonus.c\
+		ft_lstadd_front_bonus.c\
+		ft_lstclear_bonus.c\
+		ft_lstdelone_bonus.c\
+		ft_lstiter_bonus.c\
+		ft_lstlast_bonus.c\
+		ft_lstmap_bonus.c\
+		ft_lstnew_bonus.c\
+		ft_lstsize_bonus.c\
+
 FILIO = $(SRC:.c=.o)
+
+FILIO_B = $(SRC_B:.c=.o)
 
 WWW	= -Wall -Wextra -Werror
 
 all: $(NAME)
-	gcc $(WWW) libft.h $(FILIO)
 	ar -rc $(NAME) $(FILIO)
+
+bonus:	$(FILIO_B)
+	ar -r $(NAME) $(FILIO_B)
 
 $(NAME):	$(FILIO)
 
 $(FILIO):	$(SRC)
 		gcc -c $(WWW) $?
 clean:	
-	$(RM) $(FILIO)
+	$(RM) $(FILIO) $(FILIO_B)
 fclean: clean
 	$(RM) $(NAME)
 re: fclean all

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+static char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-int	ft_devcunt(int n)
+static int	ft_devcunt(int n)
 {
 	int	i;
 
@@ -38,7 +38,7 @@ int	ft_devcunt(int n)
 	return (i);
 }
 
-int	ft_cunt(int n)
+static int	ft_cunt(int n)
 {
 	int	i;
 
@@ -56,7 +56,7 @@ int	ft_cunt(int n)
 	return (i);
 }
 
-int	ft_tihaja(int n)
+static int	ft_tihaja(int n)
 {
 	int	div;
 
