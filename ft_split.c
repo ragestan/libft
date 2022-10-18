@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	ft_strlenlil(char *str, char charset)
+static size_t	ft_strlenlil(char const *str, char charset)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0' && str[i] != charset)
@@ -21,18 +21,18 @@ static int	ft_strlenlil(char *str, char charset)
 	return (i);
 }
 
-static char	*ft_word(char *str, char charset)
+static char	*ft_word(char const *str, char charset)
 {
-	int		j;
-	int		i;
+	size_t	j;
+	size_t	i;
 	char	*word;
 
 	j = ft_strlenlil(str, charset);
 	i = 0;
-	word = (char *)malloc((j + 1) * sizeof(char));
+	word = malloc(j + 1);
 	if (!word)
 		return (0);
-	while (i < j && str[i] != charset)
+	while (str[i] && str[i] != charset)
 	{
 		word[i] = str[i];
 		i++;
@@ -41,20 +41,20 @@ static char	*ft_word(char *str, char charset)
 	return (word);
 }
 
-static int	ft_count(char *str, char c)
+static size_t	ft_count(char const *str, char c)
 {
-	int	i;
-	int	count;
+	size_t	i;
+	size_t	count;
 
 	i = 0;
 	count = 0;
 	while (str[i] != '\0')
 	{
-		while (str[i] != '\0' && str[i] != c)
+		while (str[i] != '\0' && str[i] == c)
 			i++;
 		if (str[i] != '\0')
 			count++;
-		while (str[i] != '\0' && str[i] == c)
+		while (str[i] != '\0' && str[i] != c)
 			i++;
 	}
 	return (count);
@@ -62,24 +62,26 @@ static int	ft_count(char *str, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
+	size_t	i;
+	size_t	j;
 	char	**string;
 
 	i = 0;
-	string = (char **)malloc(sizeof(char *) * (ft_count((char *)s, c) + 1));
+	j = 0;
+	string = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (!string)
 		return (0);
-	while (*s != '\0')
+	while (s[j])
 	{
-		while (*s != '\0' && *s == c)
-			s++;
-		if (*s != '\0')
+		while (s[j] && s[j] == c)
+			j++;
+		if (s[j])
 		{
-			string[i] = ft_word((char *)s, c);
+			string[i] = ft_word(s + j, c);
 			i++;
 		}
-		while (*s != '\0' && *s != c)
-			s++;
+		while (s[j] && s[j] != c)
+			j++;
 	}
 	string[i] = 0;
 	return (string);

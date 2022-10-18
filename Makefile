@@ -53,12 +53,13 @@ FILIO_B = $(SRC_B:.c=.o)
 WWW	= -Wall -Wextra -Werror
 
 all: $(NAME)
-	ar -rc $(NAME) $(FILIO)
+	
 
 bonus:	$(FILIO_B)
 	ar -r $(NAME) $(FILIO_B)
 
 $(NAME):	$(FILIO)
+	ar -rc $(NAME) $(FILIO)
 
 $(FILIO):	$(SRC)
 		gcc -c $(WWW) $?

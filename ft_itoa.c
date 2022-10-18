@@ -11,89 +11,44 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static char	*ft_strcpy(char *dest, char *src)
+static size_t	ft_count(int n)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
+	if (n == 0)
 		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-static int	ft_devcunt(int n)
-{
-	int	i;
-
-	i = 0;
-	while (n > 0)
+	while (n != 0)
 	{
-		n = n / 10;
+		n /= 10;
 		i++;
 	}
 	return (i);
-}
-
-static int	ft_cunt(int n)
-{
-	int	i;
-
-	i = 0;
-	if (n < 0)
-	{
-		n = -n;
-		i++;
-	}
-	while (n > 0)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
-}
-
-static int	ft_tihaja(int n)
-{
-	int	div;
-
-	div = 1;
-	while (n > 0)
-	{
-		div = div * 10;
-		n--;
-	}
-	return (div);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*s;
-	int		i;
-	int		div;
+	char		*str;
+	int			i;
+	long int	j;
 
-	i = ft_cunt(n);
-	s = malloc (i + 1);
-	if (!s)
-		return (0);
-	if (n == -2147483648)
-		return (ft_strcpy(s, "-2147483648"));
-	i = ft_devcunt(n);
-	div = ft_tihaja(i - 1);
-	i = 0;
+	j = n;
+	i = ft_count(n);
 	if (n < 0)
-		s[i++] = '-';
-	if (n < 0)
-		n = -n;
-	while (div > 0)
 	{
-		s[i] = n / div % 10 + 48;
-		div = div / 10;
+		j = -j;
 		i++;
 	}
-	s[i] = 0;
-	return (s);
+	str = malloc(i + 1);
+	if (!str)
+		return (NULL);
+	str[i] = '\0';
+	while (i--)
+	{
+		str[i] = j % 10 + '0';
+		j /= 10;
+	}
+	if (n < 0)
+	str[0] = '-';
+	return (str);
 }

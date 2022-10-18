@@ -35,7 +35,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	k = ft_mystrlen((char *)s1, (char *)s2);
-	dest = malloc(k);
+	dest = malloc(k + 1);
 	if (!dest)
 		return (0);
 	while (s1[i])
